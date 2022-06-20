@@ -70,7 +70,7 @@ def addScore(winner, score):
     #farn in integer
     farn = farnScore()
     #who needs to pay
-    whoPay = whoPayMoney()
+    whoPay = whoPayMoney(winner)
    
     #if conceded
     if whoPay != 0:
@@ -116,7 +116,7 @@ def farnScore():
 ################################################################################################################################################
 ###############################################################################################################################################
 #who pays
-def whoPayMoney():
+def whoPayMoney(winner):
 
     while True:
         try:
@@ -126,7 +126,7 @@ def whoPayMoney():
         except ValueError:
             print ("stop fucking around")
 
-    if whoPay < 0 or whoPay > 4:
+    if whoPay < 0 or whoPay > 4 or whoPay == winner:
         print ("stop fucking around")
         whoPay = whoPayMoney()
 
